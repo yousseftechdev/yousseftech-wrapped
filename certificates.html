@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youssef | Certificates</title>
+    <meta name="description" content="Manage and display certificates and achievements." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header class="container top-nav glass">
+      <a class="brand" href="index.html">yousseftech</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="repos.html">Repositories</a>
+        <a class="active" href="certificates.html">Certificates</a>
+      </nav>
+    </header>
+
+    <main class="container certificates-layout">
+      <section class="panel reveal-up">
+        <h1 class="gradient-text">Certificates & Achievements</h1>
+        <p>
+          Add certifications stored directly in Supabase through secure server-side API routes.
+        </p>
+        <form id="certificateForm" class="certificate-form">
+          <input required name="title" placeholder="Certificate title" />
+          <input required name="issuer" placeholder="Issuer" />
+          <input required name="date" type="month" />
+          <input name="url" placeholder="Verification URL (optional)" />
+          <button class="btn primary" type="submit">Add Certificate</button>
+        </form>
+        <p id="certificateStatus" class="muted">Connecting to Supabase...</p>
+      </section>
+
+      <section>
+        <div id="certificateList" class="stack"></div>
+      </section>
+    </main>
+
+    <script src="certificates.js"></script>
+  </body>
+</html>
