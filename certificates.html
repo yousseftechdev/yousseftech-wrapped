@@ -29,8 +29,9 @@
     <main class="container certificates-layout">
       <section class="panel reveal-up">
         <h1 class="gradient-text">Certificates & Achievements</h1>
-        <p>Add and remove certificates below, then export the updated JSON file.</p>
-
+        <p>
+          Add certifications stored directly in Supabase through secure server-side API routes.
+        </p>
         <form id="certificateForm" class="certificate-form">
           <input required name="title" placeholder="Certificate title" />
           <input required name="issuer" placeholder="Issuer" />
@@ -38,13 +39,7 @@
           <input name="url" placeholder="Verification URL (optional)" />
           <button class="btn primary" type="submit">Add Certificate</button>
         </form>
-
-        <div class="hero-actions" style="margin-top: 0.8rem;">
-          <button id="exportCertificates" class="btn">Download certificates.json</button>
-          <button id="resetCertificates" class="btn">Reload from file</button>
-        </div>
-
-        <p id="certificateStatus" class="muted">Loading certificates...</p>
+        <p id="certificateStatus" class="muted">Connecting to Supabase...</p>
       </section>
 
       <section>

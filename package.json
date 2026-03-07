@@ -1,0 +1,11 @@
+{
+  "name": "yousseftech-wrapped",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check app.js && node --check repos.js && node --check certificates.js && node --check api/certificates.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4"
+  }
+}

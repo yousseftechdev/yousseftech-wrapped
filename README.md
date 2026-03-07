@@ -1,26 +1,46 @@
 # yousseftech-wrapped
 
-A modern multi-page portfolio.
+A modern multi-page portfolio with a Supabase-backed certificates system.
 
 ## Pages
-- `index.html`: Homepage with hero, skills, and highlights.
-- `repos.html`: GitHub API-powered repositories page showing stars, issues, and forks.
-- `certificates.html`: Certificates page powered by `data/certificates.json`.
+- `index.html`: Homepage with hero, achievements, skills, and profile picture placeholder.
+- `repos.html`: GitHub API powered repositories page displaying stars, open issues, and forks.
+- `certificates.html`: Certificates page backed by Supabase (no localStorage).
 
-## Content files
-- `data/achievements.json`: Source of truth for the homepage Highlights & Achievements section.
-- `data/certificates.json`: Source of truth for the certificates page.
+## Tech setup
+- Static pages for UI.
+- Vercel serverless API route (`/api/certificates`) for secure Supabase access.
+- Supabase credentials are read from environment variables only.
 
-You can edit those two JSON files directly to update your portfolio content.
+## Environment variables
+Create these secrets in Vercel Project Settings (or in local `.env` for development):
+- `SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
 
-## Certificates workflow
-1. Open the Certificates page.
-2. Add/remove entries in the UI.
-3. Click **Download certificates.json**.
-4. Replace `data/certificates.json` in the repo with the downloaded file.
+> Do not commit real secrets to the repository.
+
+## Supabase table SQL
+```sql
+create table if not exists public.certificates (
+  id bigserial primary key,
+  title text not null,
+  issuer text not null,
+  date text not null,
+  url text,
+  created_at timestamptz not null default now()
+);
+```
 
 ## Run locally
 ```bash
-python3 -m http.server 8080
+npm install
+vercel dev
 ```
-Then open `http://localhost:8080`.
+Then open `http://localhost:3000`.
+
+## Deploy
+- **Vercel (recommended):** import repo and configure environment variables above.
+- **GitHub Pages limitation:** API routes and secret env vars are not available on pure static GitHub Pages.
+
+## Why this is safer
+Supabase credentials are never shipped to the browser; database operations happen only in server-side API routes using environment secrets.

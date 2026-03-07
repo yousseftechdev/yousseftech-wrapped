@@ -1,101 +1,109 @@
 const form = document.getElementById("certificateForm");
 const list = document.getElementById("certificateList");
 const statusText = document.getElementById("certificateStatus");
-const exportButton = document.getElementById("exportCertificates");
-const resetButton = document.getElementById("resetCertificates");
-
-let certificates = [];
 
 function setStatus(message, isError = false) {
   statusText.textContent = message;
   statusText.style.color = isError ? "#ffb0b0" : "";
 }
 
-function downloadJson(filename, data) {
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = filename;
-  link.click();
-  URL.revokeObjectURL(url);
+function certificateCard(item) {
+  return `
+    <article class="cert-item reveal-up">
+      <h3>${item.title}</h3>
+      <p><strong>Issuer:</strong> ${item.issuer}</p>
+      <p><strong>Date:</strong> ${item.date}</p>
+      ${item.url ? `<p><a class="btn" href="${item.url}" target="_blank" rel="noreferrer">Verify</a></p>` : ""}
+      <button class="btn" data-id="${item.id}">Remove</button>
+    </article>
+  `;
 }
 
-function renderCertificates() {
-  if (!certificates.length) {
-    list.innerHTML = '<p class="muted">No certificates yet. Add one above.</p>';
-    return;
-  }
-
-  list.innerHTML = certificates
-    .map(
-      (item, index) => `
-        <article class="cert-item reveal-up">
-          <h3>${item.title}</h3>
-          <p><strong>Issuer:</strong> ${item.issuer}</p>
-          <p><strong>Date:</strong> ${item.date}</p>
-          ${item.url ? `<p><a class="btn" href="${item.url}" target="_blank" rel="noreferrer">Verify</a></p>` : ""}
-          <button class="btn" data-index="${index}">Remove</button>
-        </article>
-      `
-    )
-    .join("");
-}
-
-async function loadCertificatesFromFile() {
-  setStatus("Loading certificates from data/certificates.json...");
+async function renderCertificates() {
+  setStatus("Loading certificates from Supabase...");
 
   try {
-    const response = await fetch("data/certificates.json", { cache: "no-store" });
-    const data = await response.json();
+    const response = await fetch("/api/certificates");
+    const payload = await response.json();
 
-    if (!response.ok || !Array.isArray(data)) {
-      throw new Error("Invalid certificates.json format.");
+    if (!response.ok) {
+      throw new Error(payload.error || "Failed to load certificates.");
     }
 
-    certificates = data;
-    renderCertificates();
-    setStatus(`Loaded ${certificates.length} certificate${certificates.length === 1 ? "" : "s"}.`);
+    const data = payload.data || [];
+
+    if (!data.length) {
+      list.innerHTML = '<p class="muted">No certificates yet. Add your first one above.</p>';
+      setStatus("Connected to Supabase. Ready for your first certificate.");
+      return;
+    }
+
+    list.innerHTML = data.map(certificateCard).join("");
+    setStatus(`Loaded ${data.length} certificate${data.length === 1 ? "" : "s"} from Supabase.`);
   } catch (error) {
-    certificates = [];
-    renderCertificates();
+    list.innerHTML = "";
     setStatus(`Could not load certificates: ${error.message}`, true);
   }
 }
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const values = Object.fromEntries(new FormData(form).entries());
 
-  certificates.unshift(values);
-  form.reset();
-  renderCertificates();
-  setStatus("Certificate added in-memory. Download certificates.json to save changes.");
+  setStatus("Saving certificate...");
+
+  try {
+    const response = await fetch("/api/certificates", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+
+    const payload = await response.json();
+
+    if (!response.ok) {
+      throw new Error(payload.error || "Failed to save certificate.");
+    }
+
+    form.reset();
+    await renderCertificates();
+  } catch (error) {
+    setStatus(`Could not save certificate: ${error.message}`, true);
+  }
 });
 
-list.addEventListener("click", (event) => {
+list.addEventListener("click", async (event) => {
   const target = event.target;
 
   if (!(target instanceof HTMLButtonElement)) {
     return;
   }
 
-  const index = Number(target.dataset.index);
+  const id = target.dataset.id;
 
-  if (Number.isNaN(index)) {
+  if (!id) {
     return;
   }
 
-  certificates.splice(index, 1);
-  renderCertificates();
-  setStatus("Certificate removed in-memory. Download certificates.json to save changes.");
+  setStatus("Removing certificate...");
+
+  try {
+    const response = await fetch(`/api/certificates?id=${encodeURIComponent(id)}`, {
+      method: "DELETE",
+    });
+
+    const payload = await response.json();
+
+    if (!response.ok) {
+      throw new Error(payload.error || "Failed to remove certificate.");
+    }
+
+    await renderCertificates();
+  } catch (error) {
+    setStatus(`Could not remove certificate: ${error.message}`, true);
+  }
 });
 
-exportButton.addEventListener("click", () => {
-  downloadJson("certificates.json", certificates);
-  setStatus("Downloaded certificates.json. Replace data/certificates.json with this file.");
-});
-
-resetButton.addEventListener("click", loadCertificatesFromFile);
-
-loadCertificatesFromFile();
+renderCertificates();
