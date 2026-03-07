@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youssef | Portfolio</title>
+    <meta
+      name="description"
+      content="A modern portfolio showcasing achievements, skills, projects, and certifications."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="container top-nav glass">
+      <a class="brand" href="index.html">yousseftech</a>
+      <nav>
+        <a class="active" href="index.html">Home</a>
+        <a href="repos.html">Repositories</a>
+        <a href="certificates.html">Certificates</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero glass reveal-up">
+        <div class="hero-copy">
+          <p class="tag">Software Engineer • Builder • Lifelong Learner</p>
+          <h1>
+            Hi, I'm <span class="gradient-text">Youssef</span>.<br />
+            I build reliable products with modern web technologies.
+          </h1>
+          <p>
+            Welcome to my portfolio — a snapshot of my work, skills, repositories, and professional
+            achievements.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="repos.html">See My Repos</a>
+            <a class="btn" href="certificates.html">My Certificates</a>
+          </div>
+        </div>
+        <div class="profile-card reveal-right">
+          <div class="profile-photo">
+            <span>Add Your Picture</span>
+          </div>
+          <ul>
+            <li><strong>Location:</strong> Add your city</li>
+            <li><strong>Experience:</strong> Add your years</li>
+            <li><strong>Email:</strong> you@example.com</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel reveal-up">
+        <h2>Core Skills</h2>
+        <div class="chips">
+          <span>JavaScript / TypeScript</span>
+          <span>React / Next.js</span>
+          <span>Node.js</span>
+          <span>Python</span>
+          <span>SQL</span>
+          <span>REST APIs</span>
+          <span>UI/UX</span>
+          <span>CI/CD</span>
+        </div>
+      </section>
+
+      <section class="panel reveal-up">
+        <h2>Highlights & Achievements</h2>
+        <div id="achievementsList" class="timeline"></div>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <p>© <span id="year"></span> Youssef.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

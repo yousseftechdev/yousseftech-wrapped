@@ -1,0 +1,276 @@
+:root {
+  --bg: #090d1a;
+  --panel: rgba(19, 27, 47, 0.72);
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #e7ebff;
+  --muted: #b6c0ea;
+  --accent: #7b8cff;
+  --accent-2: #5cf2c8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #101a36, var(--bg) 45%);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 1rem auto;
+}
+
+.bg-orb {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(60px);
+  z-index: -1;
+  opacity: 0.5;
+  animation: float 12s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 220px;
+  height: 220px;
+  background: #5a64ff;
+  top: 2rem;
+  left: -3rem;
+}
+
+.orb-2 {
+  width: 260px;
+  height: 260px;
+  background: #1fb0a4;
+  right: -4rem;
+  bottom: 10vh;
+  animation-delay: -5s;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  position: sticky;
+  top: 0.8rem;
+  z-index: 5;
+}
+
+.glass,
+.panel,
+.repo-card,
+.cert-item {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+}
+
+.brand {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+nav {
+  display: flex;
+  gap: 0.8rem;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+}
+
+nav a.active,
+nav a:hover {
+  background: rgba(123, 140, 255, 0.2);
+  color: white;
+}
+
+.hero {
+  margin-top: 1.5rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.2rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.tag,
+.muted {
+  color: var(--muted);
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn {
+  border: 1px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  background: transparent;
+}
+
+.primary {
+  background: linear-gradient(120deg, var(--accent), #5e65d9);
+  border: none;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.profile-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.profile-photo {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  height: 220px;
+  display: grid;
+  place-content: center;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+
+.panel {
+  padding: 1.3rem;
+  margin-top: 1rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chips span {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+}
+
+.timeline {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.timeline article {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.8rem;
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  margin: 2rem auto;
+}
+
+.controls {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+input {
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+.repo-grid,
+.stack {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.repo-card,
+.cert-item {
+  padding: 1rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.8rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.certificate-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6rem;
+}
+
+.certificates-layout {
+  margin-top: 1.5rem;
+}
+
+.reveal-up,
+.reveal-right {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: reveal 0.8s ease forwards;
+}
+
+.reveal-right {
+  transform: translateX(18px);
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-24px) scale(1.05);
+  }
+}
+
+@media (max-width: 840px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youssef | Repositories</title>
+    <meta name="description" content="GitHub repositories with stars and open issues." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header class="container top-nav glass">
+      <a class="brand" href="index.html">yousseftech</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a class="active" href="repos.html">Repositories</a>
+        <a href="certificates.html">Certificates</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="panel reveal-up">
+        <h1 class="gradient-text">My GitHub Repositories</h1>
+        <p>
+          Live data from the GitHub API (stars and open issues included). Change the username below
+          to your own GitHub handle.
+        </p>
+        <div class="controls">
+          <input id="username" type="text" value="yousseftech" aria-label="GitHub username" />
+          <button id="loadRepos" class="btn primary">Load Repos</button>
+        </div>
+        <p id="repoStatus" class="muted">Loading repositories…</p>
+      </section>
+
+      <section id="repoGrid" class="repo-grid"></section>
+    </main>
+
+    <script src="repos.js"></script>
+  </body>
+</html>
