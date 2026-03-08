@@ -17,7 +17,7 @@ async function loadRepos() {
     const response = await fetch(
       `https://api.github.com/users/${encodeURIComponent(
         username
-      )}/repos?sort=updated&per_page=100`
+      )}/repos?per_page=100`
     );
 
     if (!response.ok) {
@@ -31,14 +31,18 @@ async function loadRepos() {
       return;
     }
 
-    statusText.textContent = `Showing ${repos.length} repositories.`;
+    console.log("Fetched repositories:", repos);
+
+    statusText.textContent = `Showing ${repos.length} repositories. Sorted by stars.`;
+
+    repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
 
     repos.forEach((repo) => {
       const card = document.createElement("article");
       card.className = "repo-card reveal-up";
       card.innerHTML = `
         <h3>${repo.name}</h3>
-        <p>${repo.description || "No description provided."}</p>
+        <p>${repo.description || "No description, check README."}</p>
         <div class="meta">
           <span>⭐ ${repo.stargazers_count}</span>
           <span>🐞 ${repo.open_issues_count}</span>

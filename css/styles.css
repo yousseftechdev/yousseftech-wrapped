@@ -73,9 +73,18 @@ body {
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
   color: var(--text);
   text-decoration: none;
+  font-size: larger;
   font-weight: 800;
+  transition: all 0.2s;
+}
+
+.brand:hover {
+  color: var(--accent);
 }
 
 nav {
@@ -291,6 +300,14 @@ input {
 
 .reveal-right {
   transform: translateX(18px);
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--line);
 }
 
 @keyframes reveal {
