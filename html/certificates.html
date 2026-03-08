@@ -11,16 +11,16 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
 
     <header class="container top-nav glass">
-      <a class="brand" href="index.html">yousseftech</a>
+      <a class="brand" href="index.html">Youssef Tech</a>
       <nav>
-        <a href="index.html">Home</a>
+        <a href="../index.html">Home</a>
         <a href="repos.html">Repositories</a>
         <a class="active" href="certificates.html">Certificates</a>
       </nav>
@@ -30,16 +30,9 @@
       <section class="panel reveal-up">
         <h1 class="gradient-text">Certificates & Achievements</h1>
         <p>
-          Add certifications stored directly in Supabase through secure server-side API routes.
+          Wall of pride.
         </p>
-        <form id="certificateForm" class="certificate-form">
-          <input required name="title" placeholder="Certificate title" />
-          <input required name="issuer" placeholder="Issuer" />
-          <input required name="date" type="month" />
-          <input name="url" placeholder="Verification URL (optional)" />
-          <button class="btn primary" type="submit">Add Certificate</button>
-        </form>
-        <p id="certificateStatus" class="muted">Connecting to Supabase...</p>
+        <p id="certificateStatus" class="muted">Loading certificates...</p>
       </section>
 
       <section>
@@ -47,6 +40,6 @@
       </section>
     </main>
 
-    <script src="certificates.js"></script>
+    <script src="../js/certificates.js"></script>
   </body>
 </html>

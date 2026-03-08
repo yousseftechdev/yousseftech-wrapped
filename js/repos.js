@@ -1,10 +1,9 @@
 const repoGrid = document.getElementById("repoGrid");
 const statusText = document.getElementById("repoStatus");
-const usernameInput = document.getElementById("username");
 const loadReposBtn = document.getElementById("loadRepos");
 
 async function loadRepos() {
-  const username = usernameInput.value.trim();
+  const username = "yousseftechdev"
 
   if (!username) {
     statusText.textContent = "Please provide a GitHub username.";
@@ -44,7 +43,7 @@ async function loadRepos() {
           <span>⭐ ${repo.stargazers_count}</span>
           <span>🐞 ${repo.open_issues_count}</span>
           <span>🍴 ${repo.forks_count}</span>
-        </div>
+        </div><br>
         <p><a class="btn" href="${repo.html_url}" target="_blank" rel="noreferrer">Open Repository</a></p>
       `;
       repoGrid.appendChild(card);
@@ -54,5 +53,4 @@ async function loadRepos() {
   }
 }
 
-loadReposBtn.addEventListener("click", loadRepos);
 loadRepos();

@@ -1,0 +1,154 @@
+[
+  {
+    "title": "Certificate of completion for 'From Idea to Project' Program",
+    "issuer": "Egypt Entrepreneurship & Innovation Center, National Institute for Governance & Sustainable Development",
+    "date": "2023",
+    "code": null,
+    "url": null,
+    "image": "EEIC-Course.png"
+  },
+  {
+    "title": "Certificate of completion for 'Startup Business Idea Test' Program",
+    "issuer": "Egypt Entrepreneurship & Innovation Center, National Institute for Governance & Sustainable Development",
+    "date": "2023",
+    "code": null,
+    "url": null,
+    "image": "EEIC-Test.png"
+  },
+  {
+    "title": "English Certificate of Proficiency: C2 Proficient",
+    "issuer": "EF SET",
+    "date": "27 Feb 2025",
+    "code": null,
+    "url": "https://cert.efset.org/cs4VtB",
+    "image": "english.png"
+  },
+  {
+    "title": "Certificate of participation in the Local Stage of the Internation Sience and Engineering Fair (ISEF) in Asyut",
+    "issuer": "EF SET",
+    "date": "11 Jan 2026",
+    "code": null,
+    "url": null,
+    "image": "english.png"
+  },
+  {
+    "title": "Python Developer Certificate",
+    "issuer": "Sololearn",
+    "date": "11 Feb 2025",
+    "code": null,
+    "url": "https://www.sololearn.com/certificates/CC-1SKYDQMK",
+    "image": "PythonSololearn.png"
+  },
+  {
+    "title": "Introduction to SQL Certificate",
+    "issuer": "Sololearn",
+    "date": "8 Mar 2026",
+    "code": null,
+    "url": "https://www.sololearn.com/certificates/CC-OPASBSWK",
+    "image": "SqlSololearn.jpg"
+  },
+  {
+    "title": "Participation Certificate in AWS Educate DECI Summer Program",
+    "issuer": "Amazon, Digital Egypt Cubs Initiative (DECI), Ministry of Communications and Information Technology (MCIT)",
+    "date": "9 Jul 2023",
+    "code": null,
+    "url": null,
+    "image": "AWS-Educate.png"
+  },
+  {
+    "title": "Certificate of completion for Level 2 of the DECI nanodegree program",
+    "issuer": "Udacity, Digital Egypt Cubs Initiative (DECI), Ministry of Communications and Information Technology (MCIT)",
+    "date": "Oct 2023",
+    "code": null,
+    "url": "https://www.udacity.com/certificate/e/b71d8a4c-9ad3-11ee-9b3d-af4745737650",
+    "image": "deci-lvl-2.png"
+  },
+  {
+    "title": "Certificate of completion for Level 3 of the DECI nanodegree program in Embedded systems and Robotics",
+    "issuer": "Udacity, Digital Egypt Cubs Initiative (DECI), Ministry of Communications and Information Technology (MCIT)",
+    "date": "Oct 2024",
+    "code": null,
+    "url": "https://www.udacity.com/certificate/e/0a666d4a-53ae-11ed-ba32-a7430f4cff34",
+    "image": "deci-lvl-3.png"
+  },
+  {
+    "title": "Certificate of completion for Level 4 of the DECI nanodegree program in Embedded systems and Robotics",
+    "issuer": "Udacity, Digital Egypt Cubs Initiative (DECI), Ministry of Communications and Information Technology (MCIT)",
+    "date": "Oct 2025",
+    "code": null,
+    "url": "https://www.udacity.com/certificate/e/cd092372-a27d-11ef-b45f-8b75854b4fee",
+    "image": "deci-lvl-4.png"
+  },
+  {
+    "title": "Certificate of completion for Python Programming Basics",
+    "issuer": "Huawei ICT Academy",
+    "date": "26 Jan 2026",
+    "code": "EBG20260126006899",
+    "url": null,
+    "image": "PythonHuawei.png"
+  },
+  {
+    "title": "Certificate of completion for Overview of AI",
+    "issuer": "Huawei ICT Academy",
+    "date": "24 Jan 2026",
+    "code": "ICT20260124068020",
+    "url": null,
+    "image": "AIOverviewHuawei.png"
+  },
+  {
+    "title": "Certificate of completion for AI Basics (CRA Training Program)",
+    "issuer": "Huawei ICT Academy",
+    "date": "24 Jan 2026",
+    "code": "ICTCRA20260124047734",
+    "url": null,
+    "image": "AIOverview2huawei.png"
+  },
+  {
+    "title": "Certificate of completion for Development and Basic Concepts of Cloud Computing",
+    "issuer": "Huawei ICT Academy",
+    "date": "25 Jan 2026",
+    "code": "ICT20260125026450",
+    "url": null,
+    "image": "CloudComputingHuawei.png"
+  },
+  {
+    "title": "Certificate of completion for Cloud Basics: Development and Basic Concepts of Cloud Computing (CRA Training Program)",
+    "issuer": "Huawei ICT Academy",
+    "date": "25 Jan 2026",
+    "code": "ICTCRA20260125011600",
+    "url": null,
+    "image": "CloudComputing2huawei.png"
+  },
+  {
+    "title": "Certificate of completion for Data Management and Analytics",
+    "issuer": "Huawei ICT Academy",
+    "date": "26 Jan 2026",
+    "code": "ICT20260126032405",
+    "url": null,
+    "image": "DataManagementHuawei.png"
+  },
+  {
+    "title": "Certificate of completion for Development and Basic Concepts of Cloud Computing (CRA Training Program)",
+    "issuer": "Huawei ICT Academy",
+    "date": "25 Jan 2026",
+    "code": "ICTCRA20260126032848",
+    "url": null,
+    "image": "DataManagementHuaweiCRATraining.png"
+  },
+  {
+    "title": "Certificate of completion for Information Representation and Data Organization",
+    "issuer": "Huawei ICT Academy",
+    "date": "27 Jan 2026",
+    "code": "ICT20260127017979",
+    "url": null,
+    "image": "InformationRepresentationHuawei.png"
+  },
+  {
+    "title": "Certificate of completion for Information Representation and Data Organization (CRA Training Program)",
+    "issuer": "Huawei ICT Academy",
+    "date": "27 Jan 2026",
+    "code": "ICTCRA20260127018505",
+    "url": null,
+    "image": "InformationRepresentationCRATrainingHuawei.png"
+  }
+]

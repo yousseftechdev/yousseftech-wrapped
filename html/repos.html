@@ -11,16 +11,16 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
 
     <header class="container top-nav glass">
-      <a class="brand" href="index.html">yousseftech</a>
+      <a class="brand" href="index.html">Youssef Tech</a>
       <nav>
-        <a href="index.html">Home</a>
+        <a href="../index.html">Home</a>
         <a class="active" href="repos.html">Repositories</a>
         <a href="certificates.html">Certificates</a>
       </nav>
@@ -29,20 +29,12 @@
     <main class="container">
       <section class="panel reveal-up">
         <h1 class="gradient-text">My GitHub Repositories</h1>
-        <p>
-          Live data from the GitHub API (stars and open issues included). Change the username below
-          to your own GitHub handle.
-        </p>
-        <div class="controls">
-          <input id="username" type="text" value="yousseftech" aria-label="GitHub username" />
-          <button id="loadRepos" class="btn primary">Load Repos</button>
-        </div>
         <p id="repoStatus" class="muted">Loading repositories…</p>
       </section>
 
       <section id="repoGrid" class="repo-grid"></section>
     </main>
-
-    <script src="repos.js"></script>
+    
+    <script src="../js/repos.js"></script>
   </body>
 </html>
