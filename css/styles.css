@@ -1,7 +1,7 @@
 :root {
   --bg: #090d1a;
   --panel: rgba(19, 27, 47, 0.72);
-  --line: rgba(255, 255, 255, 0.12);
+  --line: #ffffff1f;
   --text: #e7ebff;
   --muted: #b6c0ea;
   --accent: #7b8cff;
@@ -160,6 +160,7 @@ p {
 
 .btn:hover {
   transform: scale(1.1);
+  border: 1px solid var(--accent);
 }
 
 .primary {
@@ -174,13 +175,13 @@ p {
 }
 
 .profile-card {
-  border: 2px dashed var(--line);
+  border: 1px solid var(--line);
   border-radius: 14px;
   padding: 1rem;
 }
 
 .profile-photo {
-  /* border: 2px dashed var(--accent); */
+  border: 1px dashed var(--accent);
   border-radius: 12px;
   height: 370px;
   display: flex;
@@ -250,6 +251,7 @@ p {
 }
 
 .chips span:hover {
+  border: 1px solid var(--accent);
   background: rgba(255, 255, 255, 0.158);
 }
 
