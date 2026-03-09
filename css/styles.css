@@ -167,7 +167,7 @@ p {
 }
 
 .profile-card {
-  border: 1px solid var(--line);
+  border: 2px dashed var(--line);
   border-radius: 14px;
   padding: 1rem;
 }
