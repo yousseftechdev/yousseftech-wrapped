@@ -283,6 +283,10 @@ p {
   background: rgba(255, 255, 255, 0.158);
 }
 
+.chips .tags:hover {
+  transform: scale(1.1);
+}
+
 .timeline {
   display: grid;
   gap: 0.8rem;
@@ -311,6 +315,26 @@ input {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.05);
   color: var(--text);
+}
+
+input[type="date"] {
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+  cursor: pointer;
+}
+
+input[type="date"]:hover {
+  border: 1px solid var(--accent);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .repo-grid,
@@ -509,6 +533,14 @@ input {
 
 .card4:hover .discord {
   fill: white;
+}
+
+code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  user-select: text;
 }
 
 @keyframes reveal {

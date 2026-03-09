@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youssef | Blog</title>
+    <meta name="description"
+        content="A modern portfolio showcasing achievements, skills, projects, and certifications." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/tokyo-night-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/80772590?v=4" type="image/x-icon">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="container top-nav glass">
+        <a class="brand" href="../index.html">
+            <img src="https://avatars.githubusercontent.com/u/80772590?v=4" alt="github profile pic" class="logo" />
+            Youssef Tech
+        </a>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="repos.html">Repositories</a>
+            <a href="certificates.html">Certificates</a>
+            <a class="active" href="blog.html">Blog</a>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="panel reveal-up">
+            <h1 class="gradient-text">My personal blog</h1>
+            <p>
+                A place where I share my thoughts, experiences, and progress on projects. Feel free to follow along my journey. 
+            </p>
+        </section>
+        <section class="panel reveal-up">
+            <h2>Filter Posts</h2>
+            <div class="controls">
+                <input type="text" id="searchInput" placeholder="Search posts..." />
+                <input type="date" id="dateFilter" />
+                <button id="clearFilters" class="btn">Clear Filters</button>
+            </div>
+            <div id="tagFilters" class="chips" style="margin-top: 0.8rem;"></div>
+        </section>
+        <section id="blog-posts"></section>
+    </main>
+    <script src="../js/blog.js"></script>
+</body>
+
+</html>
