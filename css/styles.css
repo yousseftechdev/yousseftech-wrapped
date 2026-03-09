@@ -70,6 +70,7 @@ body {
   background: var(--panel);
   backdrop-filter: blur(14px);
   border-radius: 16px;
+  user-select: none;
 }
 
 .brand {
@@ -191,6 +192,8 @@ p {
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 1rem;
+  max-height: max-content;
+  user-select: text;
 }
 
 .profile-photo {
@@ -241,6 +244,18 @@ p {
   transform: rotateY(180deg);
   background: rgba(123, 140, 255, 0.1);
   /* border: 1px dashed var(--accent); */
+}
+
+.email {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s;
+  text-decoration: underline;
+}
+
+.email:hover {
+  text-decoration: none;
+  color: var(--accent);
 }
 
 .panel {

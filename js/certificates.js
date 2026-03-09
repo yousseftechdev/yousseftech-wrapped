@@ -9,7 +9,7 @@ function setStatus(message, isError = false) {
 function certificateCard(item) {
   return `
     <article class="cert-item reveal-up">
-      ${item.image ? `<p><img class="cert-image" src="../data/images/${item.image}" alt="${item.title}"></p>` : ""}
+      ${item.image ? `<p><img class="cert-image" src="../data/images/certificates/${item.image}" alt="${item.title}"></p>` : ""}
       <h3>${item.title}</h3>
       <p><strong>Issuer:</strong> ${item.issuer}</p>
       <p><strong>Date:</strong> ${item.date}</p>
