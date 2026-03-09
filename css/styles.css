@@ -75,6 +75,7 @@ body {
 .brand {
   display: flex;
   align-items: center;
+  padding: 10px;
   gap: 0.8rem;
   color: var(--text);
   text-decoration: none;
@@ -84,7 +85,19 @@ body {
 }
 
 .brand:hover {
+  border-radius: 12px;
+  background-color: var(--bg);
   color: var(--accent);
+}
+
+.logo {
+  border: 0px solid var(--line);
+  transition: all 0.2s;
+}
+
+.brand:hover .logo {
+  border: 1px solid var(--accent);
+  transform: scale(1.1);
 }
 
 nav {
