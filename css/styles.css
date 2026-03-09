@@ -137,6 +137,13 @@ p {
   color: transparent;
 }
 
+.gradient-text-alt {
+  background: linear-gradient(100deg, orange, coral);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .btn {
   border: 1px solid var(--line);
   color: var(--text);
@@ -173,7 +180,7 @@ p {
 }
 
 .profile-photo {
-  border: 1px dashed var(--line);
+  /* border: 2px dashed var(--accent); */
   border-radius: 12px;
   height: 370px;
   display: flex;
@@ -181,6 +188,32 @@ p {
   align-items: center;
   color: var(--muted);
   margin-bottom: 0.8rem;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.profile-photo-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.profile-photo:hover .profile-photo-inner {
+  transform: rotateY(-180deg);
+}
+
+.profile-photo-front,
+.profile-photo-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-photo img {
@@ -188,6 +221,12 @@ p {
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
+}
+
+.profile-photo-back {
+  transform: rotateY(180deg);
+  background: rgba(123, 140, 255, 0.1);
+  /* border: 1px dashed var(--accent); */
 }
 
 .panel {
@@ -308,6 +347,138 @@ input {
   border-radius: 999px;
   object-fit: cover;
   border: 1px solid var(--line);
+}
+
+/* From Uiverse.io by Praashoo7 */ 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.up {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.down {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.card1 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  border-radius: 90px 5px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+.instagram {
+  margin-top: 1.5em;
+  margin-left: 1.2em;
+  fill: #cc39a4;
+}
+
+.card2 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  border-radius: 5px 90px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+.telegram {
+  margin-top: 1.5em;
+  margin-left: -.9em;
+  fill: #03A9F4;
+}
+
+.card3 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  border-radius: 5px 5px 5px 90px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+.github {
+  margin-top: -.6em;
+  margin-left: 1.2em;
+  fill: white;
+}
+
+.card4 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  border-radius: 5px 5px 90px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+.discord {
+  margin-top: -.9em;
+  margin-left: -1.2em;
+  fill: #8c9eff;
+}
+
+.card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #cc39a4;
+}
+
+.card1:hover .instagram {
+  fill: white;
+}
+
+.card2:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #03A9F4;
+}
+
+.card2:hover .telegram {
+  fill: white;
+}
+
+.card3:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: black;
+}
+
+.card3:hover .github {
+  fill: white;
+}
+
+.card4:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #8c9eff;
+}
+
+.card4:hover .discord {
+  fill: white;
 }
 
 @keyframes reveal {
