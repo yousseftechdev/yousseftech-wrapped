@@ -1,14 +1,14 @@
 [
-    {
-        "title": "How this blog works",
-        "date": "2026-03-09",
-        "body": "To some, this is very stupid, but this is what i could think of for now, I'll improve it later... hopefully🙏...<br> ANYWAYS, basically, this blog is powered by a simple JSON file that contains all the blog posts as objects with these attributes: title, date, body, and tags.<br>The post object structure looks like this:<br><pre><code class='language-json'>[\n    {\n        \"title\": \"My First Blog Post\",\n        \"date\": \"2026-03-09\",\n        \"body\": \"This is a test to check if the blog page is working correctly.\",\n        \"tags\": [\"Software\", \"Blog News\"]\n    }\n]</code></pre> The JavaScript code fetches this JSON file and renders the blog posts on the page, aaaand that's basically it... I feel embarrased about this approach from how bad it is, it's really ineffiecient.<br>I bet you were expecting some databse with an API system going on, nope, just some JSON and JS magic.",
-        "tags": ["Web", "Tutorial"]
-    },
-    {
-        "title": "My First Blog Post",
-        "date": "2026-03-09",
-        "body": "This is a test to check if the blog page is working correctly.",
-        "tags": ["Blog News"]
-    }
+  {
+    "title": "How this blog works",
+    "date": "2026/03/09 12:36 Mon",
+    "body": "To some, this is very stupid, but this is what i could think of for now, I'll improve it later... hopefully🙏...<br> ANYWAYS, basically, this blog is powered by a simple JSON file that contains all the blog posts as objects with these attributes: title, date, body, and tags.<br>The post object structure looks like this:<br><pre><code class='language-json'>[\n    {\n        \"title\": \"My First Blog Post\",\n        \"date\": \"2026/03/09\",\n        \"body\": \"This is a test to check if the blog page is working correctly.\",\n        \"tags\": [\"Software\", \"Blog News\"]\n    }\n]</code></pre> The JavaScript code fetches this JSON file and renders the blog posts on the page, aaaand that's basically it... I feel embarrased about this approach from how bad it is, it's really ineffiecient.<br>I bet you were expecting some databse with an API system going on, nope, just some JSON and JS magic.",
+    "tags": ["Web", "Tutorial"]
+  },
+  {
+    "title": "My First Blog Post",
+    "date": "2026/03/09 12:12 Mon",
+    "body": "This is a test to check if the blog page is working correctly.",
+    "tags": ["Blog News"]
+  }
 ]
