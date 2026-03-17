@@ -535,12 +535,54 @@ input[type="date"]:hover {
   fill: white;
 }
 
+/* End of uiverse.io element */
+
 code {
   background: rgba(255, 255, 255, 0.06);
   padding: 0.2rem 0.4rem;
   border-radius: 6px;
   border: 1px solid var(--line);
   user-select: text;
+}
+
+.quote-section {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.quote-box {
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+}
+
+.quote-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: #f3f3f3;
+}
+
+.quote-author {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.8;
+  text-align: right;
+}
+
+.quote-loading {
+  margin: 0;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+#refreshQuoteBtn {
+  margin-top: 0.8rem;
+  font-size: 10px;
 }
 
 @keyframes reveal {

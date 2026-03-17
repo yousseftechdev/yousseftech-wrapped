@@ -1,2 +1,4 @@
 postBodyGenerator
 venv
+.vscode
+.cspell

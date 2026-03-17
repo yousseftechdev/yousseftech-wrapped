@@ -85,6 +85,7 @@ async function loadPosts() {
         posts.forEach(post => {
             const article = document.createElement('article');
             article.classList.add('panel');
+            article.classList.add('reveal-up');
             article.dataset.date = post.date;
             article.dataset.tags = post.tags.join(',');
             const tagsHtml = post.tags.map(tag => `<span style="background-color: ${tagColors[tag] || '#ffffff'}">${tag}</span>`).join('');
