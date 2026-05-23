@@ -10,12 +10,13 @@ async function loadPosts() {
             "Hardware": "#52b452ff",
             "Personal Experience": "#5252b4ff",
             "Tutorial": "#b452b4ff",
-            "Opinion": "#52b4b4ff",
+            "Opinion/Thought": "#52b4b4ff",
             "Project Update": "#b4b452ff",
             "Tech Trends": "#c75a28ff",
             "Event Recap": "#4bd384ff",
             "Web": "#43556eff",
-            "Linux/Bash": "#5c3245ff"
+            "Linux/Bash": "#5c3245ff",
+            "Vibe Code": "#6a55b8ff"
         };
         
         // Collect unique tags and dates
@@ -61,7 +62,7 @@ async function loadPosts() {
 
             document.querySelectorAll('#blog-posts article').forEach(article => {
                 const title = article.querySelector('h2')?.textContent.toLowerCase() || '';
-                const body = article.querySelector('p:nth-of-type(2)')?.textContent.toLowerCase() || '';
+                const body = article.querySelector('.post-body')?.textContent.toLowerCase() || '';
                 const date = article.dataset.date || '';
                 const tags = (article.dataset.tags || '').split(',');
 
@@ -92,12 +93,34 @@ async function loadPosts() {
             article.innerHTML = `
                 <h2>${post.title}</h2>
                 <p><em>${post.date}</em></p>
-                <p>${post.body}</p>
+                <div class="post-body collapsed">
+                    <p>${post.body}</p>
+                </div>
+                <button class="expand-btn">Read more</button>
                 <div class="chips">${tagsHtml}</div>
             `;
             container.appendChild(article);
         });
         hljs.highlightAll();
+
+        // Handle expand/collapse toggle
+        document.querySelectorAll('.expand-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const body = btn.parentElement.querySelector('.post-body');
+                body.classList.toggle('expanded');
+                body.classList.toggle('collapsed');
+                btn.textContent = body.classList.contains('expanded') ? 'Show less' : 'Read more';
+            });
+        });
+
+        // Hide expand button for posts that don't overflow
+        document.querySelectorAll('.post-body').forEach(body => {
+            const btn = body.parentElement.querySelector('.expand-btn');
+            if (body.scrollHeight <= 200) {
+                body.classList.remove('collapsed');
+                btn.style.display = 'none';
+            }
+        });
     } catch (error) {
         console.error('Error loading posts:', error);
     }

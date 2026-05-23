@@ -598,6 +598,57 @@ code {
   }
 }
 
+.post-body {
+  max-height: 200px;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease;
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 0.8rem 0;
+}
+
+.post-body.collapsed::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, var(--panel));
+  pointer-events: none;
+}
+
+.post-body.expanded {
+  max-height: none;
+}
+
+.post-body.expanded::after {
+  display: none;
+}
+
+.expand-btn {
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.expand-btn:hover {
+  background: rgba(123, 140, 255, 0.1);
+}
+
 @media (max-width: 840px) {
   .hero {
     grid-template-columns: 1fr;
